@@ -17,7 +17,12 @@ class ProfileListViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         assignDelegateAndDatasource()
-        if ProfileController.shared.profiles == nil {
+        let launchedBefore = UserDefaults.standard.bool(forKey: Keys.launchedBeforeKey)
+        if launchedBefore  {
+            print("Not first launch.")
+        } else {
+            print("First launch, setting UserDefault.")
+            UserDefaults.standard.set(true, forKey: Keys.launchedBeforeKey)
             ProfileController.shared.fetchProfiles(completion: {
                 guard let profiles = ProfileController.shared.profiles else {return}
                 let group = DispatchGroup()

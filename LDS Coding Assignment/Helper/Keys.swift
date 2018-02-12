@@ -10,8 +10,11 @@ import Foundation
 
 struct Keys {
     
-    static let baseURLString = "https://edge.ldscdn.org/mobile/interview/directory"
+    // User Defaults
+    static let launchedBeforeKey = "launchedBefore"
     
+    // URL
+    static let baseURLString = "https://edge.ldscdn.org/mobile/interview/directory"
     
     // View Keys
     static let profileCellIdentifier = "profileCell"

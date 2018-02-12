@@ -9,30 +9,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LDS Coding Assignment/View Controllers/DetailedProfileViewController.swift"
-            timestampString = "540167195.898518"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "setUpUI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "LDS Coding Assignment/View Controllers/ProfileListViewController.swift"
-            timestampString = "540167195.8989"
+            timestampString = "540169217.252619"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LDS_Coding_Assignment.ProfileListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "LDS Coding Assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaelmeyers/Documents/Interview%20Apps/LDS%20Coding%20Assignment/LDS%20Coding%20Assignment/View%20Controllers/ProfileListViewController.swift"
+                  timestampString = "540169218.338385"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "970">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in LDS_Coding_Assignment.ProfileListViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "LDS Coding Assignment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaelmeyers/Documents/Interview%20Apps/LDS%20Coding%20Assignment/LDS%20Coding%20Assignment/View%20Controllers/ProfileListViewController.swift"
+                  timestampString = "540169218.342211"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "17">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

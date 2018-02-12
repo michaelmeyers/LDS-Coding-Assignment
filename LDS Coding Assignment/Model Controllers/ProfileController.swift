@@ -7,12 +7,15 @@
 //
 
 import Foundation
+import CoreData
 
 class ProfileController {
     
     static let shared = ProfileController()
     
-    var profiles: [Profile]?
+    var profiles: [Profile]? {
+        return loadProfiles()
+    }
 
     func fetchProfiles(completion: @escaping () -> Void) {
         guard let url = URL(string: Keys.baseURLString) else {return}
@@ -31,12 +34,10 @@ class ProfileController {
             guard let jsonDictionary = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String: Any],
                 let profileArray = jsonDictionary[Keys.profileArrayKey] as? [[String: Any]] else {completion(); return}
             
-            var profiles: [Profile] = []
             for dictionary in profileArray {
                 guard let profile = Profile(dictionary: dictionary) else {completion(); return}
-                profiles.append(profile)
+                self.saveToUserPersistentStore()
             }
-            self.profiles = profiles
             completion()
         }
         dataTask.resume()
@@ -57,9 +58,31 @@ class ProfileController {
                 return
             }
             profile.picture = data as NSData
+            self.saveToUserPersistentStore()
             completion()
         }
         dataTask.resume()
+    }
+    
+    func saveToUserPersistentStore() {
+        
+        let moc = CoreDataStack.context
+        do{
+            try moc.save()
+        } catch let error {
+            print("Problem Saving to Persistent Store: \(error)")
+        }
+    }
+    
+    func loadProfiles() -> [Profile] {
+        let moc = CoreDataStack.context
+        let fetchRequest: NSFetchRequest<Profile> = Profile.fetchRequest()
+        do {
+            let fetchedProfiles = try moc.fetch(fetchRequest)
+            return fetchedProfiles
+        } catch {
+            fatalError("Failed to fetch Profiles: \(error)")
+        }
     }
     
 }
